@@ -1,1 +1,1 @@
-
+import {Friend} from "./friend";
