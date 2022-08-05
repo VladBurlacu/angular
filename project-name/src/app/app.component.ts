@@ -9,4 +9,9 @@ import {Friend} from "./friend";
 export class AppComponent {
   languageArray:Array<string> = ['HTML', 'css','javascript','php', 'angular', 'python']
   friendModel = new Friend('','','',0,'')
+
+  submitForm() {
+    console.log(this.friendModel);
+  }
 }
+
