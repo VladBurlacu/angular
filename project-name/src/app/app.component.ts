@@ -11,14 +11,15 @@ import {HttpClient} from "@angular/common/http";
 export class AppComponent {
   languageArray:Array<string> = ['HTML', 'css','javascript','php', 'angular', 'python']
   friendModel = new Friend('','','',0,'')
-  private addFriendService: AddFriendService;
 
   submitForm() {
-    console.log(this.friendModel);
+    //console.log(this.friendModel);
+    let observable = this.addFriendService.addFriend(this.friendModel)
+    observable.subscribe(data => {
+      console.log("it worked")},error => console.error("it didn't work"))
   }
 
-  constructor() {
-    this.addFriendService = new AddFriendService()
+  constructor(private addFriendService: AddFriendService) {
   }
 }
 
